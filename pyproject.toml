@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "spinnmf"
-version = "0.1.0"
+dynamic = ["version"]
 description = "SPINNMF: Stable Spatial Pattern Discovery via AutoK Consensus Graph-Regularized Poisson NMF"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -12,23 +12,6 @@ license = {text = "MIT"}
 authors = [
   {name = "Caicai Zhang"},
   {name = "Frank Qingyun Wang"}
-]
-urls = {
-  Homepage = "https://github.com/ZHANGCaicai581/SPINNMF",
-  Repository = "https://github.com/ZHANGCaicai581/SPINNMF",
-  Issues = "https://github.com/ZHANGCaicai581/SPINNMF/issues"
-}
-classifiers = [
-  "Development Status :: 3 - Alpha",
-  "Intended Audience :: Science/Research",
-  "License :: OSI Approved :: MIT License",
-  "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.9",
-  "Programming Language :: Python :: 3.10",
-  "Programming Language :: Python :: 3.11",
-  "Programming Language :: Python :: 3.12",
-  "Topic :: Scientific/Engineering :: Bio-Informatics",
-  "Topic :: Scientific/Engineering :: Information Analysis"
 ]
 dependencies = [
   "numpy>=1.22",
@@ -41,6 +24,23 @@ dependencies = [
   "tqdm>=4.66",
   "matplotlib>=3.7"
 ]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+  "Topic :: Scientific/Engineering :: Information Analysis"
+]
+
+[project.urls]
+Homepage = "https://github.com/ZHANGCaicai581/SPINNMF"
+Repository = "https://github.com/ZHANGCaicai581/SPINNMF"
+Issues = "https://github.com/ZHANGCaicai581/SPINNMF/issues"
 
 [project.scripts]
 spinnmf = "spinnmf.cli:main"
@@ -55,3 +55,6 @@ dev = [
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/spinnmf"]
+
+[tool.hatch.version]
+path = "spinnmf/src/spinnmf/__init__.py"
