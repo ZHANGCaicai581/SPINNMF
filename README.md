@@ -2,14 +2,18 @@
 
 ![SPINNMF workflow](docs/method_workflow.png)
 
-## 安装
+Stable spatial pattern discovery via AutoK consensus graph-regularized Poisson NMF.
 
--（发布到 PyPI 后）`pip install spinnmf`
-- 开发模式：在源码根目录运行 `pip install -e .[dev]`
+## Install
 
-## 快速使用
+- PyPI: `pip install spinnmf`
+- Dev (repo root): `pip install -e .[dev]`
 
-命令行运行 AutoK：
+Requires Python >=3.9.
+
+## Quick start
+
+CLI (AutoK):
 ```bash
 spinnmf \
   --h5ad /path/to/spatial.h5ad \
@@ -19,7 +23,7 @@ spinnmf \
   --n_jobs 4
 ```
 
-Python 调用：
+Python API:
 ```python
 import anndata as ad
 from spinnmf import fit_spin_nmf_autok, config
@@ -30,7 +34,12 @@ res = fit_spin_nmf_autok(adata.X, adata.obsm["spatial"], cfg)
 print(res.K_star, res.W.shape, res.H.shape)
 ```
 
-## 测试与构建
+Outputs (CLI):
+- `W.npy`, `H.npy`: consensus factors
+- `autok_metrics.csv`: stability / redundancy per K
+- `summary.json`: selected K* and config
+
+## Test and build
 
 ```bash
 pytest
