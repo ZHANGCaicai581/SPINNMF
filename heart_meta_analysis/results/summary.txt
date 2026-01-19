@@ -1,0 +1,20 @@
+Heart SPINNMF meta-analysis
+
+Runs:
+
+  - heart_20251110_180023
+  - heart_20251114_131458
+  - heart_20251110_163555
+
+NMI / ARI by run:
+  heart_20251110_180023: NMI=0.487, ARI=0.286
+  heart_20251114_131458: NMI=0.495, ARI=0.318
+  heart_20251110_163555: NMI=0.467, ARI=0.303
+
+Domain purity (median per run):
+  heart_20251110_163555: median purity=0.404
+  heart_20251110_180023: median purity=0.465
+  heart_20251114_131458: median purity=0.474
+
+Cross-sample factor pairs: n=35, mean corr=0.911
+  Fraction corr>=0.5: 100.00%
